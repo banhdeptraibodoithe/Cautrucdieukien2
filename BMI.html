@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <h1>Tính BMI</h1>
+    <p>Nhập chiều cao: <input type="number" id="height"></p>
+    <p>Nhập cân nặng: <input type="number" id="weight"></p>
+    <h3 id="result"></h3>
+    
+    <button onclick="bmiCal()">Kết quả</button>
+    <script>
+        function bmiCal()
+        {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+            let BMI = weight / (height ^ 2);
+            if (BMI < 18.5)
+                document.getElementById("result").innerHTML = "Underweight";
+            else if (BMI < 25.0 && BMI >= 18.5)
+                document.getElementById("result").innerHTML = "Normal";
+            else if (BMI < 30.0 && BMI >= 25.0)
+                document.getElementById("result").innerHTML = "Overweight";
+            else
+                document.getElementById("result").innerHTML = "Obese";
+        }
+    </script>
+</body>
+</html>
