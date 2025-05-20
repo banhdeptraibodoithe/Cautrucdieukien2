@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cautrucdieukien1</title>
+</head>
+<body>
+    <h1>Bài 1</h1>
+    <p>Nhập a: <input type="number" id="a"></p>
+    <p>Nhập b: <input type="number" id="b"></p>
+    <h3 id="result"></h3>
+    <button onclick="aChiab()">Kiểm tra</button>
+    <script>
+        function aChiab()
+        {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            if (a % b == 0)
+                document.getElementById("result").innerHTML = "a chia hết cho b";
+            else
+                document.getElementById("result").innerHTML = "a không chia hết cho b";
+        }
+    </script>
+    <h1>Bài 2</h1>
+    <p>Nhập tuổi: <input type="number" id="age" oninput="dkVao10()"></p>
+    <h3 id="tuoi"></h3>
+    <script>
+        function dkVao10()
+        {
+            let a = Number(document.getElementById("age").value);
+            if (a >= 15)
+                document.getElementById("tuoi").innerHTML = "Đủ điều kiện vào lớp 10";
+            else
+                document.getElementById("tuoi").innerHTML = "không đủ điều kiện vào lớp 10";
+        }
+    </script>
+    <h1>Bài 3</h1>
+    <p>Nhập số tại đây: <input type="number" oninput="soSanh(value)"></p>
+    <h3 id="so"></h3>
+    <script>
+        function soSanh(value)
+        {
+            if (Number(value) > 0)
+                document.getElementById("so").innerHTML = "Số này lớn hơn không";
+            else if (Number(value) < 0)
+                document.getElementById("so").innerHTML = "Số này nhỏ hơn không";
+            else
+                document.getElementById("so").innerHTML = "Số này bằng không";
+        }
+    </script>
+    <h1>Bài 4</h1>
+    <p>Nhập số thứ nhất: <input type="number" id="1"></p>
+    <p>Nhập số thứ hai: <input type="number" id="2"></p>
+    <p>Nhập số thứ ba: <input type="number" id="3"></p>
+    <h3 id="res"></h3>
+    <button id="sosanh" onclick="GTLN()">Số lớn nhất là</button>
+    <script>
+        function GTLN()
+        {
+            let a = document.getElementById("1").value;
+            let b = document.getElementById("2").value;
+            let c = document.getElementById("3").value;
+            document.getElementById("res").innerHTML = (a >= b ? (a >= c ? a : c) : (b >= c ? b : c));
+        }
+    </script>
+    <h1>Bài 5</h1>
+    <p>Điểm kiểm tra: <input type="number" id="kt"></p>
+    <p>Điểm giữa kỳ: <input type="number" id="gk"></p>
+    <p>Điểm cuối kỳ: <input type="number" id="ck"></p>
+    <h3 id="result1"></h3>
+    <button onclick="xeploaiHocLuc()">Kết quả</button>
+    <script>
+        function xeploaiHocLuc()
+        {
+            let result = document.getElementById("kt").value * 0.2 + document.getElementById("gk").value * 0.3 + document.getElementById("ck").value * 0.5;
+            if (result >= 8 && result < 10)
+                document.getElementById("result1").innerHTML = "Học lực giỏi";
+            else if (result >= 6 && result < 8)
+                document.getElementById("result1").innerHTML = "Học lực khá";
+            else if (result >= 4 && result < 6)
+                document.getElementById("result1").innerHTML = "Học lực trung bình";
+            else if (result >= 0 && result < 4)
+                document.getElementById("result1").innerHTML = "Học lực yếu";
+        }
+    </script>
+    <h1>Bài 6</h1>
+    <p>Nhập doanh số bán hàng: <input type="number" id="ds" oninput="tinhhoahong()"></p>
+    <p>Nhập % hoa hồng: <input type="number" id="hh" oninput="tinhhoahong()"></p>
+    <h3 id="hoahong"></h3>
+    <script>
+        function tinhhoahong()
+        {
+            document.getElementById("hoahong").innerHTML = "Tiền hoa hồng là: "
+            document.getElementById("hoahong").innerHTML += document.getElementById("ds").value * (document.getElementById("hh").value / 100);
+        }
+    </script>
+    <h1>Bài 7</h1>
+    <p>Nhập số cuộc gọi: <input type="number" id="calls" oninput="cuocphiDT()"></p>
+    <p>Nhập cước phí mỗi cuộc gọi: <input type="number" id="costs" oninput="cuocphiDT()"></p>
+    <h3 id="cuocphi"></h3>
+    <script>
+        function cuocphiDT()
+        {
+            document.getElementById("cuocphi").innerHTML = "Tiền điện thoại là: "
+            document.getElementById("cuocphi").innerHTML += document.getElementById("calls").value * document.getElementById("costs").value;
+        }
+    </script>
+</body>
+</html>
