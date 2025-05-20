@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <h1>Mini game Good-Fast-Cheap</h1>
+    <table style="height: 250px;">
+        <tr>
+            <td><button style="height: 50px; width: 50px; border-radius: 10px;" id="good" onclick="goodClick()" value="false">Good</button></td>
+            <td><button style="height: 50px; width: 50px; border-radius: 10px;" id="cheap" onclick="cheapClick()" value="false">Fast</button></td>
+            <td><button style="height: 50px; width: 50px; border-radius: 10px;" id="fast" onclick="fastClick()" value="false">Cheap</button></td>
+        </tr>
+    </table>
+    <script>
+        const origincolor = document.getElementById("good").style.backgroundColor;
+        function goodClick()
+        {
+            document.getElementById("good").value = "true";
+            document.getElementById("good").style.backgroundColor= "red";
+            if (document.getElementById("fast").value == "true" && document.getElementById("cheap").value == "true")
+            {
+                document.getElementById("cheap").value = "false";
+                document.getElementById("cheap").style.backgroundColor = origincolor;
+            }
+        }
+        function cheapClick()
+        {
+            document.getElementById("cheap").value = "true";
+            document.getElementById("cheap").style.backgroundColor = "green";
+            if (document.getElementById("good").value == "true" && document.getElementById("fast").value == "true")
+            {
+                document.getElementById("fast").value = "false";
+                document.getElementById("fast").style.backgroundColor = origincolor;
+            }
+        }
+        function fastClick()
+        {
+            document.getElementById("fast").value = "true";
+            document.getElementById("fast").style.backgroundColor = "blue";
+            if (document.getElementById("good").value == "true" && document.getElementById("cheap").value == "true")
+            {
+                document.getElementById("good").value = "false";
+                document.getElementById("good").style.backgroundColor = origincolor;
+            }
+        }
+    </script>
+</center>
+</body>
+</html>
