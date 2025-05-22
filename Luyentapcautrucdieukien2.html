@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấu trúc điều kiện 2</title>
+</head>
+
+<body>
+    <center>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td>
+                    <h1>Bài 1: chuyển độ C => F</h1>
+                    <p>Nhập độ C: <input type="number" id="doC" oninput="convertC()"></p>
+                    <h3 id="doF"></h3>
+                    <script>
+                        function convertC() {
+                            let F = document.getElementById("doC").value * 9 / 5 + 32;
+                            document.getElementById("doF").innerHTML = F + "Độ F";
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>Bài 2: Chuyển từ m sang feet</h1>
+                    <p>Nhập m: <input type="number" id="met" oninput="convertFeet()"></p>
+                    <h3 id="feet"></h3>
+                    <script>
+                        function convertFeet() {
+                            let Feet = document.getElementById("met").value * 3.2808;
+                            document.getElementById("feet").innerHTML = Feet + "feet";
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>Bài 3: S hình vuông với cạnh = a</h1>
+                    <p>Nhập a: <input type="number" id="canh" oninput="sHinhVuong()"></p>
+                    <h3 id="Svuong"></h3>
+                    <script>
+                        function sHinhVuong() {
+                            let a = document.getElementById("canh").value;
+                            document.getElementById("Svuong").innerHTML = "Hình vuông có S là: " + a * a;
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>Bài 4: S chữ nhật với 2 cạnh a,b</h1>
+                    <p>Nhập a: <input type="number" id="canhDai" oninput="sChuNhat()"></p>
+                    <p>Nhập b: <input type="number" id="canhRong" oninput="sChuNhat()"></p>
+                    <h3 id="Schunhat"></h3>
+                    <script>
+                        function sChuNhat() {
+                            let S = document.getElementById("canhDai").value * document.getElementById("canhRong").value;
+                            document.getElementById("Schunhat").innerHTML = "Hình chữ nhật có S là: " + S;
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>Bài 5: S tam giác vuông với 2 cạnh kề a,b</h1>
+                    <p>Nhập a: <input type="number" id="canhKeA" oninput="sTamGiac()"></p>
+                    <p>Nhập b: <input type="number" id="canhKeB" oninput="sTamGiac()"></p>
+                    <h3 id="Stamgiac"></h3>
+                    <script>
+                        function sTamGiac() {
+                            let S = (document.getElementById("canhKeA").value * document.getElementById("canhKeB").value) / 2;
+                            document.getElementById("Stamgiac").innerHTML = "Hình tam giác vuông có S là: " + S;
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>
+                        <h1>Bài 6: Giải phương trình bậc 1</h1>
+                        <p><input type="number" style="width: 30px;" id="heSo1" oninput="giaiPTBac1()"> * X + <input
+                                type="number" style="width: 30px;" id="heSo2" oninput="giaiPTBac1()"> = 0</p>
+                        <h3 id="ptBac1"></h3>
+                        <script>
+                            function giaiPTBac1() {
+                                let a = +document.getElementById("heSo1").value;
+                                let b = +document.getElementById("heSo2").value;
+                                if (a == 0 && b == 0)
+                                    document.getElementById("ptBac1").innerHTML = "Phương trình vô số nghiệm";
+                                else if (a == 0)
+                                    document.getElementById("ptBac1").innerHTML = "Phương trình vô nghiệm";
+                                else
+                                    document.getElementById("ptBac1").innerHTML = "Phương trình có nghiệm là: " + -b / a;
+                            }
+                        </script>
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>Bài 7 Giải phương trình bậc 2</h1>
+                    <p><input type="number" style="width: 30px;" id="Heso1" oninput="giaiPTBac2()"> * X^2 + <input
+                            type="number" style="width: 30px;" id="Heso2" oninput="giaiPTBac2()"> * X + <input
+                            type="number" style="width: 30px;" id="Heso3" oninput="giaiPTBac2()">= 0</p>
+                    <h3 id="ptBac2"></h3>
+                    <script>
+                        function giaiPTBac2() {
+                            let a = +document.getElementById("Heso1").value;
+                            let b = +document.getElementById("Heso2").value;
+                            let c = +document.getElementById("Heso3").value;
+                            let delta = Math.pow(b, 2) - 4 * a * c;
+                            if (a == 0) {
+                                if (b == 0 && c == 0)
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình vô số nghiệm";
+                                else if (b == 0)
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình vô nghiệm";
+                                else
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình có nghiệm là: " + -b / a;
+                            }
+                            else {
+                                if (delta < 0)
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình vô nghiệm";
+                                else if (delta == 0)
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình có nghiệm kép: " + -b / (2 * a);
+                                else
+                                    document.getElementById("ptBac2").innerHTML = "Phương trình có 2 nghiệm " + "X1: " + (-b + Math.sqrt(delta)) / (2 * a) + " X2: " + (-b - Math.sqrt(delta)) / (2 * a);
+                            }
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>Bài 8: Kiểm tra tuổi</h1>
+                    <p>Nhập tuổi: <input type="number" id="age" oninput="tuoiNguoi()"></p>
+                    <h3 id="ageNguoi"></h3>
+                    <script>
+                        function tuoiNguoi() {
+                            let age = +(parseInt(document.getElementById("age").value));
+                            if (age > 0 && age < 120)
+                                document.getElementById("ageNguoi").innerHTML = "Đây là tuổi của 1 người";
+                            else
+                                document.getElementById("ageNguoi").innerHTML = "Đây không là tuổi của 1 người";
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>Bài 9: kiểm tra cạnh tam giác</h1>
+                    <p>Nhập a: <input type="number" id="canh1" oninput="canhCuaMotTamGiac()" onload></p>
+                    <p>Nhập b: <input type="number" id="canh2" oninput="canhCuaMotTamGiac()"></p>
+                    <p>Nhập c: <input type="number" id="canh3" oninput="canhCuaMotTamGiac()"></p>
+                    <h3 id="canhTG"></h3>
+                    <script>
+                        function canhCuaMotTamGiac() {
+                            let a = +document.getElementById("canh1").value;
+                            let b = +document.getElementById("canh2").value;
+                            let c = +document.getElementById("canh3").value;
+                            if (a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b)
+                                document.getElementById("canhTG").innerHTML = "Đây là cạnh của tam giác";
+                            else
+                                document.getElementById("canhTG").innerHTML = "Đây không là cạnh của tam giác";
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>Bài 10: Tính giá điện</h1>
+                    <p>Nhập Số điện: <input type="number" id="soDien" oninput="tinhTienDien()"></p>
+                    <h3 id="tienDien"></h3>
+                    <script>
+                        function tinhTienDien() {
+                            let sd = +document.getElementById("soDien").value;
+                            if (sd >= 0 && sd < 100)
+                                document.getElementById("tienDien").innerHTML = "Tiền điện (bậc 1): " + sd * 5000;
+                            else if (sd <= 200)
+                                document.getElementById("tienDien").innerHTML = "Tiền điện (bậc 2): " + sd * 7000;
+                            else if (sd > 200)
+                                document.getElementById("tienDien").innerHTML = "Tiền điện (bậc 3): " + sd * 10000;
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>Bài 11: Tính thuế thu nhập</h1>
+                    <p>Nhập thu nhập: <input type="number" id="thuNhap" oninput="tinhThue()"></p>
+                    <h3 id="tienThue"></h3>
+                    <script>
+                        function tinhThue() {
+                            let tn = +document.getElementById("thuNhap").value;
+                            if (tn >= 0 && tn < 10)
+                                document.getElementById("tienThue").innerHTML = "Không phải đóng thuế";
+                            else if (tn <= 30)
+                                document.getElementById("tienThue").innerHTML = "Đóng thuế 10%: " + tn * 0.1;
+                            else if (tn <= 50)
+                                document.getElementById("tienThue").innerHTML = "Đóng thuế 20%: " + tn * 0.2;
+                            else if (tn > 50)
+                                document.getElementById("tienThue").innerHTML = "Đóng thuế 30%: " + tn * 0.3;
+                        }
+                    </script>
+                </td>
+                <td>
+                    <h1>Bài 12: Tính lãi ngân hàng</h1>
+                    <p>Nhập số tiền ban đầu: <input type="number" id="befTien" oninput="tinhTienLai()"></p>
+                    <p>Nhập số tháng cho vay: <input type="number" id="thoiGian" oninput="tinhTienLai()"></p>
+                    <p>Nhập lãi suất: <input type="number" id="laiSuat" oninput="tinhTienLai()"></p>
+                    <h3 id="aftTien"></h3>
+                    <script>
+                        function tinhTienLai() {
+                            // A = P(1 + r)^n
+                            let p = +document.getElementById('befTien').value;
+                            let n = +document.getElementById("thoiGian").value;
+                            let r = +document.getElementById("laiSuat").value;
+                            document.getElementById("aftTien").innerHTML = "So tiền thu được sau " + n + " tháng là: " + p * (Math.pow(1 + r, n)) + " . Với số tiền lãi là: " + (p * (Math.pow(1 + r, n)) - p);
+                        }
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
