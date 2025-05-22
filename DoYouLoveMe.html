@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you hate me ?</title>
+</head>
+<body id="body">
+    <center>
+        <h1>Do you love me ?</h1>
+        <button id="yes" onclick="yesButton()">yahhh</button>  <button id="no" style="position: absolute;" onmouseover="noButton()">nahhh</button>
+    </center>
+    <script>
+        function yesButton()
+        {
+            document.getElementById("body").style.backgroundColor = "Pink";
+            alert("But... I don't like you bruhhh")
+        }
+        function noButton()
+        {
+            let a = window.innerHeight * Math.random();
+            let b = window.innerWidth * Math.random();
+            document.getElementById("no").style.top = a + "px";
+            document.getElementById("no").style.left = b + "px";
+        }
+    </script>
+</body>
+</html>
